@@ -28,4 +28,5 @@ Whenever you are learning a new language, **always** find the official language 
 - `Scheme` - [Specification/Library](https://standards.scheme.org/)
 
 *Note: For some reason the ISO wants to make you pay like $200 for the official specification, but versions of them are available.
+
 **Note: These are links that have links to the different versions of the language. So just click on the PDF/HTML link of the version you want.
