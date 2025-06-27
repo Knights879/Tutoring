@@ -101,6 +101,13 @@
 (quote (a b c))
 (newline)
 
+; - Pairs
+(cons 0 1)
+(cons '0 '1)
+'(0 . 1)
+(quote (a . b))
+(newline)
+
 
 ;; DEFINITIONS
 ; - Define
@@ -169,6 +176,7 @@ myNum
 
 ; - Strings
 (define myStr2 "Hello")
+(string? myStr2)
 (string=? "Hello" myStr2)
 (string=? "Hello" (symbol->string 'Hello))
 (newline)
@@ -177,6 +185,10 @@ myNum
 (define myList (list 1 2 3))
 (list? myList)
 (null? myList)  ; Is the list empty?
+(newline)
+
+; - Pairs
+(pair? (cons '1 '2))
 (newline)
 
 
@@ -224,13 +236,13 @@ myNum
 (newline)
 
 
-;; LISTS
+;; LISTS & PAIRS
 (define myList2 (list 'a 'b 'c))
 ; - Fundemental operations
 (car myList2)  ; Returns the first element in the list
 (cdr myList2)  ; Returns the list minus the first element
 
-(cons 'z myList2)  ; Creates a list out of the arguments
+(cons 'z myList2)  ; Creates a list/pair out of the arguments
 (append myList2 '(x y z))  ; Appends the list '(x y z)' onto the list 'myList2'
 ; NOTE: (cons myList2 '(x y z))    ; outputs: ((a b c) x y z)
 ;       (append myList2 '(x y z))  ; outputs: (a b c x y z)
@@ -240,4 +252,3 @@ myNum
 ; - Additional operations
 (cadr myList2)  ; Returns the second element in the list
 (cddr myList2)  ; Returns the list minus the first two elements
-
