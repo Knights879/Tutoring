@@ -18,6 +18,8 @@ I will be updating this periodically with things that I come up with in my tutor
 
 ## Tips
 
+### Learning a New Language
+
 Whenever you are learning a new language, **always** find the official language specification/standard library documentation and bookmark it so that you can reference it as you learn. For larger languages like Java and Python, it is nice to have both, so that you know the syntax/behavior of the language as well as what the standard libraries have to offer. While the language specification will often include the standard library, I prefer to find a place that is dedicated to listing the library out in a more readable manner.
 
 - `C`* - [Specification](https://www.iso-9899.info/wiki/The_Standard)** / [Library](https://cplusplus.com/reference/clibrary/)
