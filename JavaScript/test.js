@@ -1,3 +1,5 @@
+"use strict";
+
 var x = findMinValue(3, 5);
 
 function findMinValue(a, b) {
