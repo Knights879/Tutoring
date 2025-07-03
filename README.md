@@ -29,7 +29,7 @@ Here is a commented example of a [makefile](https://github.com/Knights879/Tutori
 Whenever you are learning a new language, **always** find the official language specification/standard library documentation and bookmark it so that you can reference it as you learn. For larger languages like Java and Python, it is nice to have both, so that you know the syntax/behavior of the language as well as what the standard libraries have to offer. While the language specification will often include the standard library, I prefer to find a place that is dedicated to listing the library out in a more readable manner.
 
 - `C`[^1] - [Specification](https://www.iso-9899.info/wiki/The_Standard)[^2] / [Library](https://cplusplus.com/reference/clibrary/)
-- `C++`* - [Specification](https://www.open-std.org/jtc1/sc22/wg21/docs/standards)[^2] / [Library](https://cplusplus.com/reference/)
+- `C++`[^1] - [Specification](https://www.open-std.org/jtc1/sc22/wg21/docs/standards)[^2] / [Library](https://cplusplus.com/reference/)
 - `Java` - [Specification](https://docs.oracle.com/javase/specs/index.html)[^2] / [Library](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/module-summary.html)
 - `JavaScript (ECMAScript)` - [Specification](https://ecma-international.org/publications-and-standards/standards/ecma-262/)[^2] / [Library](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
 - `Python` - [Specification](https://docs.python.org/3/reference/index.html#reference-index) / [Library](https://docs.python.org/3/library/index.html#library-index)
