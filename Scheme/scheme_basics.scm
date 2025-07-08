@@ -91,14 +91,7 @@
 (symbol? 'Hello)   ; outputs: #t  ; because it is a literal string
 (symbol? "Hello")  ; outputs: #f  ; because it is a String object
 (symbol? '1)       ; outputs: #f  ; because Scheme treats it as an integer
-(symbol? '1abc)    ; outputs: #t  ; because Scheme treats it as a string
-(newline)
-
-; - Lists
-(list 1 2 3)
-(list 'a 'b 'c)
-'(a b c)
-(quote (a b c))
+(symbol? '1abc)    ; outputs: #t  ; because Scheme treats it as a literal string
 (newline)
 
 ; - Pairs
@@ -106,6 +99,13 @@
 (cons '0 '1)
 '(0 . 1)
 (quote (a . b))
+(newline)
+
+; - Lists
+(list 1 2 3)
+(list 'a 'b 'c)
+'(a b c)
+(quote (a b c))
 (newline)
 
 
@@ -135,6 +135,11 @@ myNum
 ; let
 ; let*
 ; letrec
+(newline)
+
+
+;; INPUT & OUTPUT
+; TODO
 (newline)
 
 
@@ -181,14 +186,14 @@ myNum
 (string=? "Hello" (symbol->string 'Hello))
 (newline)
 
+; - Pairs
+(pair? (cons '1 '2))
+(newline)
+
 ; - Lists
 (define myList (list 1 2 3))
 (list? myList)
 (null? myList)  ; Is the list empty?
-(newline)
-
-; - Pairs
-(pair? (cons '1 '2))
 (newline)
 
 
@@ -223,10 +228,17 @@ myNum
 (newline)
 
 
+;; SYMBOLS, CHARACTERS, & STRINGS
+; TODO
+
+
 ;; CONDITIONALS
 ; (if <test> <true_option>)
 ; (if <test> <true_option> <false_option>)
 (if (= 1 1) 'true 'false)
+(if (5 < 3)
+    'true
+    'false)
 
 ; (cond <clause1> <clause2> ...)
 ; Each clause is of the form: (<test> <expr1> ...)
@@ -236,19 +248,54 @@ myNum
 (newline)
 
 
+;; ITERATION
+; TODO
+(newline)
+
+
 ;; LISTS & PAIRS
+(define myPair (cons 'x 'y))
 (define myList2 (list 'a 'b 'c))
 ; - Fundemental operations
+; -- Element access
+(car myPair)   ; Returns the first element in a pair
+(cdr myPair)   ; Returns the second element in a pair
 (car myList2)  ; Returns the first element in the list
 (cdr myList2)  ; Returns the list minus the first element
+(newline)
 
+; -- Constuction
 (cons 'z myList2)  ; Creates a list/pair out of the arguments
+(list 'a 'b 'c)    ; Creates a list out of the arguments
 (append myList2 '(x y z))  ; Appends the list '(x y z)' onto the list 'myList2'
 ; NOTE: (cons myList2 '(x y z))    ; outputs: ((a b c) x y z)
 ;       (append myList2 '(x y z))  ; outputs: (a b c x y z)
-(length myList2)
+(newline)
+
+; -- Properties
+(length myList2)  ; Returns the length of the list
 (newline)
 
 ; - Additional operations
-(cadr myList2)  ; Returns the second element in the list
-(cddr myList2)  ; Returns the list minus the first two elements
+(reverse myList2)  ; Returns a NEW list that is the reverse of the given list
+; NOTE: That means it allocates a new list, and does not modify the original.
+(cadr myList2)     ; Returns the second element in the list
+(cddr myList2)     ; Returns the list minus the first two elements
+; NOTE: Scheme provides up to four layers of 'car'/'cdr'. E.X. 'cddddr'
+; Practice: How could you define 'cddddr'?
+(newline)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
