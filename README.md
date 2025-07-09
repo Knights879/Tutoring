@@ -24,6 +24,35 @@ Here is a commented example of a [makefile](https://github.com/Knights879/Tutori
 
 ## Tips
 
+### General
+
+As a programmer, you should be really comfortable typing, especially with symbols (as they are used so often) and "navigation" keys (HOME, END, INS, DEL, PG UP, PG DN, and the arrow keys). Know the behavior of these "navigation" keys and use them to your advantage.
+
+### Keyboard Shortcuts
+
+| EXTREMELY USEFUL TIP: |
+| --- |
+| **Know your keyboard shortcuts!** |
+
+I originally had this in [General](#general), but decided it is so important that it deserves it's own section. [Here is a great list of common keyboard shortcuts.](https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts)
+
+> `CTRL/ALT` in combination with "navigation" keys changes the behavior of them to make them more "powerful." `SHIFT` in combination with "navigation" keys allows you to select text. These two combinations can be combined to allow for fast and precise select of chunks of text.
+
+There are a lot of keyboard shortcuts that can save you **a lot** time and make you **far** more productive. Whatever editor/IDE you use to program should have a list of shortcuts that are available to you, and almost all of them allow to modify or add your own shortcuts.
+
+Some common keyboard shortcuts I use **all the time** and would **highly** recommend:
+
+- `CTRL/ALT` + `Arrow left/right` - Moves left/right by a word
+- `CTRL/ALT` + `Arrow up/down` - Moves a line of code up/down
+- `CTRL/ALT` + `Backspace/DEL` - Deletes a word
+- `CTRL/ALT` + `/` - Comments out a line (you can select multiple lines and use this command to comment them all out)
+- `CTRL/ALT` + `SHIFT` + `T` - Reopens the last closed tab
+- Folding/Unfolding shortcuts - There are a lot of different options, so see how your editor implements them
+
+Some of these may not be available by default, in which case I recommend adding them.
+
+A lot of keyboard shortcuts are fairly universal, so you can use them in different applications, like Microsoft Word or your web browser.
+
 ### Learning a New Language
 
 Whenever you are learning a new language, **always** find the official language specification/standard library documentation and bookmark it so that you can reference it as you learn. For larger languages like Java and Python, it is nice to have both, so that you know the syntax/behavior of the language as well as what the standard libraries have to offer. While the language specification will often include the standard library, I prefer to find a place that is dedicated to listing the library out in a more readable manner.
@@ -70,3 +99,43 @@ If the answer is yes, then you should not put a comment. If the answer is no, th
 ### Styling
 
 TODO
+
+## Setup
+
+### Hardware
+
+I use a standard, QWERTY keyboard and a mouse with side buttons.
+
+### Operating System
+
+I use Windows 11. I have experience with MacOS but do not regularly use it.
+
+### Software
+
+#### VSCode
+
+I use VSCode for programming. It is highly customizable and relatively lightweight, while being very capable. It is very easy to add extensions, and while VSCode comes with a lot of built-in features/support, including languages, you may want to download some additional extensions. All the most common languages should come with VSCode by default, but it may not include additional features/functionality that may be very useful. As for other languages that are not supported by default, you can simply search for them in the extensions search bar and find and install extensions that add things like sytnax highlighting and linting (the basics) as well as other useful functionality like allowing you to run and debug code.
+
+**If you are using VSCode, make sure you have the following language extensions:**
+
+For C/C++ programming:
+
+- [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) - It includes `C/C++`, `C/C++ Themes`, and `CMake Tools`.
+
+For Java programming:
+
+- [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) - It includes seven extensions, but the main ones you will likely use for school are the Language Support, Project Manager, and Debugger.
+
+For Python:
+
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
+- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+
+For JavaScript:
+
+- Built-in support
+
+| NOTE: |
+| --- |
+| While these add functionality for the languages in VSCode, they do **not** add the languages themselves. You will need to do that yourself by downloading the languages onto your machine and make sure VSCode knows where they are. |
