@@ -265,11 +265,14 @@ myNum
 (newline)
 
 ; -- Constuction
-(cons 'z myList2)  ; Creates a list/pair out of the arguments
-(list 'a 'b 'c)    ; Creates a list out of the arguments
+; 'cons' creates a pair/list out of the arguments
+(cons 'z myList2)  ; outputs: (z a b c)
+(cons myList2 'z)  ; outputs: ((a b c) . z)
+; 'list' creates a list out of the arguments
+(list 'a 'b 'c)    ; outputs: (a b c)
 (append myList2 '(x y z))  ; Appends the list '(x y z)' onto the list 'myList2'
-; NOTE: (cons myList2 '(x y z))    ; outputs: ((a b c) x y z)
-;       (append myList2 '(x y z))  ; outputs: (a b c x y z)
+#; NOTE: (cons myList2 '(x y z))    ; outputs: ((a b c) x y z)
+#;       (append myList2 '(x y z))  ; outputs: (a b c x y z)
 (newline)
 
 ; -- Properties
