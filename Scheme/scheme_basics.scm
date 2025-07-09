@@ -236,7 +236,7 @@ myNum
 ; (if <test> <true_option>)
 ; (if <test> <true_option> <false_option>)
 (if (= 1 1) 'true 'false)
-(if (5 < 3)
+(if (< 5 3)
     'true
     'false)
 
