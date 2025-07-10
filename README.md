@@ -18,7 +18,7 @@ I will be updating this periodically with things that I come up with in my tutor
 
 ### Other
 
-Here is a commented example of an [.editorconfig](https://github.com/Knights879/Tutoring/blob/main/.editorconfig) file that we can use to force our editors to style/format the source files in a folder/repo a particular way so that we are all seeing the files the same way.
+Here is a commented example of an [.editorconfig](https://github.com/Knights879/Tutoring/blob/main/.editorconfig) file that we can use to force our editors to style/format the source files in a folder/repo in a particular way so that we are all seeing the files the same way.
 
 Here is a commented example of a [makefile](https://github.com/Knights879/Tutoring/blob/main/makefile) that is used with the `make` command to make build automation for C/C++ programs easier.
 
@@ -26,7 +26,7 @@ Here is a commented example of a [makefile](https://github.com/Knights879/Tutori
 
 ### General
 
-As a programmer, you should be really comfortable typing, especially with symbols (as they are used so often) and "navigation" keys (`HOME`, `END`, `INS`, `DEL`, `PG UP`, `PG DN`, and the `arrow keys`). Know the behavior of these "navigation" keys and use them to your advantage.
+As a programmer, you should be comfortable typing with symbols (as they are used so often) and "navigation" keys (`HOME`, `END`, `INS`, `DEL`, `PG UP`, `PG DN`, and the `arrow keys`). Know the behavior of these "navigation" keys and use them to your advantage.
 
 ### Keyboard Shortcuts
 
@@ -34,13 +34,13 @@ As a programmer, you should be really comfortable typing, especially with symbol
 | :--- |
 | **Know your keyboard shortcuts!** |
 
-I originally had this in [General](#general), but decided it is so important that it deserves it's own section. [Here is a great list of common keyboard shortcuts.](https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts)
+[Here is a great list of common keyboard shortcuts.](https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts)
 
 > `CTRL/ALT` in combination with "navigation" keys changes the behavior of them to make them more "powerful." `SHIFT` in combination with "navigation" keys allows you to select text. These two combinations can be combined to allow for fast and precise select of chunks of text.
 
-There are a lot of keyboard shortcuts that can save you **a lot** time and make you **far** more productive. Whatever editor/IDE you use to program should have a list of shortcuts that are available to you, and almost all of them allow to modify or add your own shortcuts.
+There are a lot of keyboard shortcuts that can save you time and make you **far** more productive. Whatever editor/IDE you use to program should have a list of shortcuts that are available to you, and almost all of them allow you to modify or add your own shortcuts.
 
-Some common keyboard shortcuts I use **all the time** and would **highly** recommend:
+Some common keyboard shortcuts I would **highly** recommend:
 
 - `CTRL/ALT` + `Arrow left/right` - Moves left/right by a word
 - `CTRL/ALT` + `Arrow up/down` - Moves a line of code up/down
@@ -51,11 +51,11 @@ Some common keyboard shortcuts I use **all the time** and would **highly** recom
 
 Some of these may not be available by default, in which case I recommend adding them.
 
-A lot of keyboard shortcuts are fairly universal, so you can use them in different applications, like Microsoft Word or your web browser.
+A lot of keyboard shortcuts are fairly universal, so you can use them in different applications like Microsoft Word or your web browser.
 
 ### Learning a New Language
 
-Whenever you are learning a new language, **always** find the official language specification/standard library documentation and bookmark it so that you can reference it as you learn. For larger languages like Java and Python, it is nice to have both, so that you know the syntax/behavior of the language as well as what the standard libraries have to offer. While the language specification will often include the standard library, I prefer to find a place that is dedicated to listing the library out in a more readable manner.
+Whenever you are learning a new language, **always** find the official language specification/standard library documentation and bookmark it so that you can reference it as you learn. For larger languages, like Java and Python, it is nice to have both so that you know the syntax/behavior of the language as well as what the standard libraries have to offer. While the language specification will often include the standard library, I prefer to find a place that is dedicated to listing the library out in a more readable manner.
 
 - `C`[^1] - [Specification](https://www.iso-9899.info/wiki/The_Standard)[^2] / [Library](https://cplusplus.com/reference/clibrary/)
 - `C++`[^1] - [Specification](https://www.open-std.org/jtc1/sc22/wg21/docs/standards)[^2] / [Library](https://cplusplus.com/reference/)
@@ -72,7 +72,7 @@ Whenever you are learning a new language, **always** find the official language 
 
 When commenting, we are always balancing the line between over-commenting and under-commenting.
 
-When deciding if you are **over-commenting**, a great rule of thumb is:
+A good way to tell if you are **over-commenting** is:
 
 > If the comment is just explaining what the code is doing in English, **delete the comment**.
 
@@ -86,7 +86,7 @@ A good example of this could be found with [fast inverse square root](https://en
 // Calculated using bit manipulation and Newton's method
 ```
 
-When asking yourself if you are over-commenting or under-commenting, a good thing to ask yourself is:
+When deciding if you should add a comment or not, a good thing to ask yourself is:
 
 > "Will the average programmer know what this code segment is doing?"
 
@@ -114,7 +114,7 @@ I use Windows 11. I have experience with MacOS but do not regularly use it.
 
 #### VSCode
 
-I use VSCode for programming. It is highly customizable and relatively lightweight, while being very capable. It is very easy to add extensions, and while VSCode comes with a lot of built-in features/support, including languages, you may want to download some additional extensions. All the most common languages should come with VSCode by default, but it may not include additional features/functionality that may be very useful. As for other languages that are not supported by default, you can simply search for them in the extensions search bar and find and install extensions that add things like sytnax highlighting and linting (the basics) as well as other useful functionality like allowing you to run and debug code.
+I use VSCode for programming. It is highly customizable and relatively lightweight. It is easy to add extensions, and while VSCode comes with a lot of built-in features/support, including languages, you may want to download some additional extensions. All the most common languages should come with VSCode by default, but it may not include additional features/functionality that you may find useful. As for other languages that are not supported by default, you can simply search for them in the extensions search bar and install extensions that add things like sytnax highlighting and linting (the basics), as well as other useful functionality like allowing you to run and debug code.
 
 **If you are using VSCode, make sure you have the following language extensions:**
 
@@ -138,4 +138,4 @@ For JavaScript:
 
 | NOTE: |
 | :--- |
-| While these add functionality for the languages in VSCode, they do **not** add the languages themselves. You will need to do that yourself by downloading the languages onto your machine and make sure VSCode knows where they are. |
+| While these add functionality for the languages in VSCode, they do **not** add the languages themselves. You will need to do that yourself by downloading the languages onto your machine and make sure VSCode knows where they are located. |
