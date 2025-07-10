@@ -31,7 +31,7 @@ As a programmer, you should be really comfortable typing, especially with symbol
 ### Keyboard Shortcuts
 
 | EXTREMELY USEFUL TIP: |
-| --- |
+| :--- |
 | **Know your keyboard shortcuts!** |
 
 I originally had this in [General](#general), but decided it is so important that it deserves it's own section. [Here is a great list of common keyboard shortcuts.](https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts)
@@ -137,5 +137,5 @@ For JavaScript:
 - Built-in support
 
 | NOTE: |
-| --- |
+| :--- |
 | While these add functionality for the languages in VSCode, they do **not** add the languages themselves. You will need to do that yourself by downloading the languages onto your machine and make sure VSCode knows where they are. |
