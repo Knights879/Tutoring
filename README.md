@@ -26,7 +26,7 @@ Here is a commented example of a [makefile](https://github.com/Knights879/Tutori
 
 ### General
 
-As a programmer, you should be comfortable typing with symbols (as they are used so often) and "navigation" keys (`HOME`, `END`, `INS`, `DEL`, `PG UP`, `PG DN`, and the `arrow keys`). Know the behavior of these "navigation" keys and use them to your advantage.
+As a programmer, you should be comfortable with typing symbols (as they are used so often) and "navigation" keys (`HOME`, `END`, `INS`, `DEL`, `PG UP`, `PG DN`, and the `arrow keys`). Know the behavior of these "navigation" keys and use them to your advantage.
 
 ### Keyboard Shortcuts
 
