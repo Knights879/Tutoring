@@ -13,6 +13,9 @@
 ; For a quick overview of 'procedures' in the language, see:
 ;   https://en.wikipedia.org/wiki/Scheme_(programming_language)#Standard_procedures
 
+;; NOTE
+; This guide mainly follows the R5RS standard.
+
 ;; COMMENTS
 ; ';' starts a single-line comment
 #; ('#;' comments out a form)
@@ -121,8 +124,8 @@
 
 ; - Set
 ; We can use 'set!' to assign a value to a variable.
-#; (NOTE: The variable 'set!' is used on must be bound, E.X. via 'define',
-          in the same scope as the 'set!' call, or the top level/global scope.)
+; NOTE: The variable 'set!' is used on must be bound, E.X. via 'define',
+;       in the same scope as the 'set!' call, or the top level/global scope.
 myNum
 (set! myNum 10)
 myNum
@@ -130,11 +133,41 @@ myNum
 myNum
 (newline)
 
-; - Let
-; TODO
-; let
-; let*
-; letrec
+; - Let, Let*, & Letrec
+; (let/let*/letrec <bindings> <body>)
+; The three "lets" allows us to define a local block of code (a local scope)
+(define a 2)
+(define b 3)
+; 'let' computes the initial values BEFORE the variables are bound
+(let ((a 1) (b 1))  ; Creates a LOCAL 'a' and 'b', giving them the value of 1
+  (* a b))          ; This operation uses the LOCAL 'a' and 'b'
+; outputs: 1
+(let ((a 1) (b a))  ; Because the init vals are computed first, 'b' is assigned
+  (* a b))          ; the GLOBAL 'a' value of 2, not the LOCAL 'a' value of 1
+; outputs: 2
+; 'let*' binds the variables sequentially, so the first binding happens then the
+; second binding happens, and so on...
+(let* ((a 1) (b 1))  ; In this case nothing changes, because the initial values
+  (* a b))           ; are not tied to any variables
+; outputs: 1
+(let* ((a 1) (b a))  ; Because the '(b a)' binding happens AFTER the '(a 1)',
+  (* a b))           ; 'b' is assigned the LOCAL value of 'a', which is 1
+; outputs: 1
+; 'letrec' binds all the variables to undefined values, and then the initial
+; values are computed and assigned to their corresponding variable
+; NOTE: Because 'letrec' binds the vars BEFORE any computations of init vals,
+;       it will give an error if it is not possible to evaluate any of the init
+;       vals (usually from involving locally bound vars in the init vals).
+;       Because of this, 'letrec' is generally used when the init vals are
+;       lambdas.
+(letrec ((a 1) (b a))  ; This still works because it is possible to evaluate all
+  (* a b))             ; init vals, in this case by evaluating the init val of
+                       ; 'a' BEFORE the init val of 'b'.
+; outputs: 1
+#;(letrec ((a b) (b a))  ; Because both variables are recursively defined by each
+    (* a b))             ; other, the init vals cannot be evaluated, which results
+                         ; in an error.
+; outputs: ERROR
 (newline)
 
 
@@ -287,18 +320,3 @@ myNum
 ; NOTE: Scheme provides up to four layers of 'car'/'cdr'. E.X. 'cddddr'
 ; Practice: How could you define 'cddddr'?
 (newline)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
