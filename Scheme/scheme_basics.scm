@@ -26,9 +26,12 @@
 (newline)  ; Evaluates to "create a new line" (press the enter key)
 
 ;; FORMS
+"FORMS"
 ; Self-evaluating forms:
 1                ; Numbers
 "Hello, world!"  ; Strings
+#\A              ; Characters
+#t               ; Booleans
 (newline)
 
 ; Procedures (something you want Scheme to evaluate)
@@ -36,10 +39,15 @@
 (+ 1 2)                 ; 1 + 2
 (* 1 2 3 4)             ; 1 * 2 * 3 * 4
 (+ 1 (- 2 3) (+ -4 5))  ; (1 + (2 - 3) + (-4 + 5))
+; (lambda <formals> <body>)  ; where <formals> is a list of arguments
+(lambda (n) (* n n))      ; outputs: <procedure:...>
+; NOTE: This defines a procedure that is not bound to anything.
+((lambda (n) (* n n)) 5)  ; outputs: 25
 (newline)
 
 
 ;; DATA TYPES
+"DATA TYPES"
 ; - Numbers
 ; Standard numbers
 8       ; Integer
@@ -59,7 +67,7 @@
 ; NOTE: You cannot use whitespace in the middle of the number!
 (newline)
 
-; - Primatives (Procedures)
+; - Procedures (Primatives)
 +  ; Plus (addition)
 -  ; Minus (subtraction)
 *  ; Asterisk/Star (multiplication)
@@ -82,10 +90,20 @@
 (newline)
 
 ; - Literals
-'a          ; outputs: a
-(quote a)   ; outputs: a
-''a         ; outputs: (quote a)
-'(quote a)  ; outputs: (quote a)
+; Literal expressions in Scheme are "external representations" of objects, or
+; forms, using the "literal" characters that "define" them. For example, the
+; number 8 is an object with the integer value 8, but the "external representation"
+; of the number is "literal" character '8'. An example with a Scheme form is
+; (+ 1 2). This is a procedure that evaluates 1 + 2, resulting in 3, but the
+; "external representation" is "literal" sequence of characters "(+ 1 2)".
+; 'obj
+; (quote obj)
+'a               ; outputs: a
+(quote a)        ; outputs: a
+'(+ 1 2)         ; outputs: (+ 1 2)
+(quote (+ 1 2))  ; outputs: (+ 1 2)
+''a              ; outputs: (quote a)
+'(quote a)       ; outputs: (quote a)
 (newline)
 
 ; - Symbols
@@ -98,13 +116,17 @@
 (newline)
 
 ; - Pairs
+; The 'cons' or 'quote' procedures can create a pair.
+; (cons obj1 obj2)  ; must pass exactly two objects
+; NOTE: 'cons' can also create lists (more on cons in section "LISTS & PAIRS").
 (cons 0 1)
 (cons '0 '1)
-'(0 . 1)
 (quote (a . b))
+'(0 . 1)
 (newline)
 
 ; - Lists
+; The 'list' procedure will create a list
 (list 1 2 3)
 (list 'a 'b 'c)
 '(a b c)
@@ -113,6 +135,7 @@
 
 
 ;; DEFINITIONS
+"DEFINITIONS"
 ; - Define
 ; We can use 'define' to associate a name to a value.
 (define myNum 7)
@@ -177,6 +200,7 @@ myNum
 
 
 ;; PREDICATES
+"PREDICATES"
 ; - Types of Numbers
 (number? 4)
 (real? 3.21)
@@ -231,6 +255,7 @@ myNum
 
 
 ;; FUNCTIONS ON NUMBERS
+"FUNCTIONS ON NUMBERS"
 (= 1 2 3)   ; True if all arguments are equal  ; NOTE: Only for numbers!
 (< 1 2 3)   ; True if all elements are greater than the previous element
 (> 1 2 3)   ; True if all elements are less than the previous element
@@ -255,6 +280,7 @@ myNum
 
 
 ;; BOOLEAN FUNCTIONS
+"BOOLEAN FUNCTIONS"
 (not #t)     ; Only returns '#t' if the argument is false
 (and #t #f)  ; Does use short-circuit evaluation
 (or #t #f)
@@ -266,6 +292,7 @@ myNum
 
 
 ;; CONDITIONALS
+"CONDITIONALS"
 ; (if <test> <true_option>)
 ; (if <test> <true_option> <false_option>)
 (if (= 1 1) 'true 'false)
@@ -287,6 +314,7 @@ myNum
 
 
 ;; LISTS & PAIRS
+"LISTS & PAIRS"
 (define myPair (cons 'x 'y))
 (define myList2 (list 'a 'b 'c))
 ; - Fundemental operations
@@ -298,9 +326,13 @@ myNum
 (newline)
 
 ; -- Constuction
-; 'cons' creates a pair/list out of the arguments
-(cons 'z myList2)  ; outputs: (z a b c)
-(cons myList2 'z)  ; outputs: ((a b c) . z)
+; 'cons' creates a pair/list out of two arguments
+(cons 'z myList2)       ; outputs: (z a b c)
+(cons myList2 'z)       ; outputs: ((a b c) . z)
+(cons myList2 myList2)  ; outputs: ((a b c) a b c)
+; NOTE: 'cons'  will only result in a list if the second argument is a list.
+; NOTE: The first argument of 'cons' will always be treated as single element
+;       (even if it is a list).
 ; 'list' creates a list out of the arguments
 (list 'a 'b 'c)    ; outputs: (a b c)
 (append myList2 '(x y z))  ; Appends the list '(x y z)' onto the list 'myList2'
