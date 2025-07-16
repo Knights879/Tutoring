@@ -55,7 +55,7 @@ A lot of keyboard shortcuts are fairly universal, so you can use them in differe
 
 ### Learning a New Language
 
-Whenever you are learning a new language, don't use tools like autocomplete and linting. While these are very helpful tools that makes programming easier and faster, they are crutches that can stunt growth and development. Only use them once you have a solid grasp of the language.
+Whenever you are learning a new language, don't use tools like autocomplete and linting. While these are very helpful tools that makes programming easier and faster, they are crutches that can stunt growth and development. Only use them once you have a solid grasp of the language. Also don't copy and paste code. Manually type out the code segment to get used to typing out code in the language.
 
 Whenever you are learning a new language, **always** find the official language specification/standard library documentation and bookmark it so that you can reference it as you learn. For larger languages, like Java and Python, it is nice to have both so that you know the syntax/behavior of the language as well as what the standard libraries have to offer. While the language specification will often include the standard library, I prefer to find a place that is dedicated to listing the library out in a more readable manner.
 
