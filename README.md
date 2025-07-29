@@ -82,7 +82,7 @@ A good way to tell if you are **under-commenting** is:
 
 > Whenever you are doing something in an unconventional way, or what you are doing is very nuanced, to the point where the average programmer would not be able to easily figure out what/why you are doing something, **you should make a comment**.
 
-A good example of this could be found with [fast inverse square root](https://en.wikipedia.org/wiki/Fast_inverse_square_root) (a good video explanation of the algorithm can be found [here](https://youtu.be/p8u_k2LIZyo)). The average programmer would not be able to easily see how the calculation is being done, so a comment would be helpful, even if it is as simple as:
+A good example of this could be found with [fast inverse square root](https://en.wikipedia.org/wiki/Fast_inverse_square_root) (a good video explanation of the algorithm can be found here, [Fast Inverse Square Root — A Quake III Algorithm](https://youtu.be/p8u_k2LIZyo)). The average programmer would not be able to easily see how the calculation is being done, so a comment would be helpful, even if it is as simple as:
 
 ```c
 // Calculated using bit manipulation and Newton's method
@@ -100,7 +100,51 @@ If the answer is yes, then you should not put a comment. If the answer is no, th
 
 ### Styling
 
-TODO
+One of the most important things to understand about styling is that **it's *(mostly)* subjective**! *For the most part*, it's an opinion, so what one person considers good styling may not be considered good styling to another person. However, there ***is* some objectivity** to styling. In order to understand the objectivity of styling, you need to understand *who* styling if for.
+
+> Styling is done for humans.
+
+Some languages, like Python, take this so seriously that they enforce styling through the syntax of the language. But for the majority of languages, how you style your code has no impact on the program itself[^3]. Compilers will almost always (except in cases like Python) ignore your comments and "miscellaneous" whitespace characters and will never include them in the compiled program. So, why do we style our code?
+
+> Styling is for making our code more readable to humans. That human can be anyone who might look at your code, including you!
+
+In general, one of the best guidelines for styling is **consistency**; pick a style and stick to it. For example:
+
+```c
+if (condition)
+{
+   // do something
+}
+else
+{
+   // do something else
+}
+```
+
+and
+
+```c
+if (condition) {
+   // do something
+}
+else {
+   // do something else
+}
+```
+
+and
+
+```c
+if (condition) {
+   // do something
+} else {
+   // do something else
+}
+```
+
+Each style is valid, so choose the style that works for you. But once you make a choice, you should stick to it, **throughout the entire program**.
+
+[^3]: It is important to know when your "styling" choice goes too far and causes a syntax error. At that point it is not a matter of style, it is a matter of syntax. Example: You cannot space out a variable name like `numRows` into `num Rows`, as the compiler will see `num` and `Rows` as two seperate identifiers, causing a syntax error.
 
 ## Setup
 
@@ -110,7 +154,7 @@ I use a standard, QWERTY keyboard and a mouse with side buttons.
 
 ### Operating System
 
-I use Windows 11. I have experience with MacOS but do not regularly use it.
+I use Windows (currently Windows 11). I have experience with MacOS, but do not use it regularly.
 
 ### Software
 
