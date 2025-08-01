@@ -15,7 +15,8 @@ print(double.__doc__)
 
 # MODULES
 
-# Constants should be defined in a "module", which could mean a new file. Imagine the following:
+# Constants should be defined in a "module", which could mean a new file.
+# Imagine the following:
 # In file named "constant.py"
 PI = 3.14159
 GRAVITY = 9.8
@@ -28,7 +29,9 @@ GRAVITY = 9.8
 
 # VARIABLES
 
-# Python is a "type inferred" language
+# Python is a "type inferred" language. That means we don't have to explicitly
+# say what type of variable we are creating. Python will "infer" the type based
+# on the value we use to initialize the variable.
 test = 10
 # This will set a = 5, b = 3.2, c = "Hello"
 a, b, c = 5, 3.2, "Hello"

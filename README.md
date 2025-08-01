@@ -108,6 +108,34 @@ Some languages, like Python, take this so seriously that they enforce styling th
 
 > Styling is for making our code more readable to humans. That human can be anyone who might look at your code, including you!
 
+It is very important to remember this when programming. Just because something *can* be done a certain way, doesn't mean that you should do it that way. This code snippet from my Data Diagrams program can help illustrate what I mean:
+
+```c
+while (i < MAX_NUM_CUSTOM_STRUCT_NAMES && names[i] != NULL)
+{
+   tempLen = (unsigned)strlen(names[i]);
+
+   if (tempLen + 8 > currMax)
+      currMax = tempLen;
+
+   i++;
+}
+```
+
+I could make the `while` loop smaller by doing this:
+
+```c
+while (i < MAX_NUM_CUSTOM_STRUCT_NAMES && names[i] != NULL)
+{
+   tempLen = (unsigned)strlen(names[i++]);
+
+   if (tempLen + 8 > currMax)
+      currMax = tempLen;
+}
+```
+
+That change is perfectly valid and it takes up less space. Which is good, right? For the most part, yes, but sometimes, ***better readability is more important than fewer lines of code***. The first way makes it much clearer what you are doing, but the code snippet is very simple so it probably wouldn't be a big deal doing it the second way. This was a very simple example, but you can get much more complex examples where readability is much more important than saving a few lines. Generally, you shouldn't be doing too many things in a single line of code.
+
 In general, one of the best guidelines for styling is **consistency**; pick a style and stick to it. For example:
 
 ```c
