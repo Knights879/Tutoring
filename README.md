@@ -108,7 +108,7 @@ Some languages, like Python, take this so seriously that they enforce styling th
 
 > Styling is for making our code more readable to humans. That human can be anyone who might look at your code, including you!
 
-It is very important to remember this when programming. Just because something *can* be done a certain way, doesn't mean that you should do it that way. This code snippet from my Data Diagrams program can help illustrate what I mean:
+It is very important to remember this when programming. Just because something *can* be done a certain way, doesn't mean that you should do it that way. This code snippet from an earlier version of my [Data Diagrams](https://github.com/Knights879/DataDiagrams) program can help illustrate what I mean:
 
 ```c
 while (i < MAX_NUM_CUSTOM_STRUCT_NAMES && names[i] != NULL)
