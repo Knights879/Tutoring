@@ -1,5 +1,12 @@
 #lang scheme
 
+;; ABOUT
+; I made this file to be a basic guide to the Scheme programming language. The
+; goal was for this to be a summary of the language specification, with the
+; audience being either students who are learning the language for school or
+; someone who just wanted to get a quick overview of the language. For more
+; information, check out the language specification (links below).
+
 ;; ACKNOWLEDGEMENTS
 ; Most of the info in these files come from the official language specification or
 ; Logic Lambda's "Introduction to Scheme Programming (CSC240)" playlist on YouTube
@@ -15,6 +22,7 @@
 
 ;; NOTE
 ; This guide mainly follows the R5RS standard.
+
 
 ;; COMMENTS
 ; ';' starts a single-line comment
@@ -309,6 +317,40 @@ myNum
 
 
 ;; ITERATION
+"ITERATION"
+; - do
+; 'do' is a standard form used for looping. Specifically, it is a binding construct
+; similar to 'lambda' or the "lets". The syntax for using 'do' is:
+#; (do ((<var1> <init1> <step1>)
+        ...)
+       (<test> <expr1> ...)
+     <command> ...)
+; Before iteration begins, each <init> is evaluated, then each <var> is bound in
+; memory, and then the corresponding <init> results are assigned to their <var>s.
+; Each iteration starts by evaluating <test>. If <test> is true (#t), then all of
+; the following <expr>s are evaluated and the last one is returned. If <test> is
+; false (#f), then all <command> expressions are evaluated, then the <step>s are
+; evaluated to update <var>s, and then the next iteration begins.
+
+; Here is an example that sums up the elements in a list:
+(do ((x '(1 2 3 4 5) (cdr x))
+     (sum 0 (+ sum (car x))))
+    ((null? x) sum))
+; NOTE: In this example we create two <var>s and have no <command>s
+
+; Here is an example that creates a list and prints the value added to the list
+; during each iteration:
+(do ((lst (list) (append lst (list i)))
+     (i 0 (+ i 1)))
+    ((> i 3) (newline) lst)
+  (display i)
+  (write-char #\space))
+; NOTE: In this example we have two <var>s, two <command>s, and two expressions
+;       that will be evaluated after the <test> finally fails, with the final
+;       expression, 'lst', being returned.
+
+; - let
+; A "named let" can also be used to create a loop.
 ; TODO
 (newline)
 
