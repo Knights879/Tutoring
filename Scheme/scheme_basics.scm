@@ -350,8 +350,27 @@ myNum
 ;       expression, 'lst', being returned.
 
 ; - let
-; A "named let" can also be used to create a loop.
-; TODO
+; (let <var> <bindings> <body>)
+; A "named let" can also be used to create a loop. It is basically the same
+; syntax and has similar functionality to 'let' with the difference being it
+; creates a procedure in <body> whose name is <var> and body is <body>. This
+; means that we can use recursion with this looping construct (by calling the
+; procedure <var> within <body>).
+
+; Here is an example that returns the list of non negative numbers from a list
+; of numbers:
+(let loop ((nums '(3 -2 1 6 -5))
+           (non-negs '()))
+  (cond ((null? nums) non-negs)
+        ((>= (car nums) 0)
+          (loop (cdr nums)
+                (cons (car nums) non-negs)))
+        ((< (car nums) 0)
+          (loop (cdr nums)
+                non-negs))))
+; Practice: Notice that the positive numbers are returned in reverse. Why is that,
+;           and how would you fix that so they are in their original order?
+; Practice: Extend the loop to also create a list of the negative numbers.
 (newline)
 
 
