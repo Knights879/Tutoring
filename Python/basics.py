@@ -3,8 +3,9 @@ print("Hello World!")
 # Comments can be done like this
 "Or like this"
 
-# Docstring is short for documentation string
-# It is put in the first line of a module, function, class, or method like so:
+# Docstrings are string literals that allow the developer to give a brief
+# explanation of a class, module, or function. (They are basically fancy comments)
+# It is put in the first line of a class, module, or function like so:
 def double(num):
     """Function to double the input value"""
     return 2 * num
