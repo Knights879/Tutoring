@@ -21,17 +21,26 @@
 ;   https://en.wikipedia.org/wiki/Scheme_(programming_language)#Standard_procedures
 
 ;; NOTE
-; This guide mainly follows the R5RS standard.
+; This guide mainly follows the R5RS standard, but does include things added in
+; R6RS and/or R7RS.
 
 
 ;; COMMENTS
 ; ';' starts a single-line comment
+
 #; ('#;' comments out a form)
 #; (Can
       be
         multiple
           lines)
+
+; "#|" ... "|#" makes block comments
+#|
+   They can even
+   #| be nested |#
+|#
 (newline)  ; Evaluates to "create a new line" (press the enter key)
+
 
 ;; FORMS
 "FORMS"
@@ -54,9 +63,22 @@
 (newline)
 
 
-;; DATA TYPES
-"DATA TYPES"
+;; DATA TYPES / OBJECTS
+"DATA TYPES / OBJECTS"
+; Scheme objects are the fundamental data types of the language (think 'int',
+; 'double', 'char', etc. in other typed languages).
+
+; - Booleans
+"Booleans"
+#t  ; true
+#f  ; false
+(newline)
+
 ; - Numbers
+"Numbers"
+; NOTE: If you want to dig deeper into how numbers are handled in Scheme,
+;       check the language specification. TLDR: At the highest level, numbers
+;       are broken into two mutually exclusive categories, exact or inexact.
 ; Standard numbers
 8       ; Integer
 3.14    ; Real
@@ -75,28 +97,62 @@
 ; NOTE: You cannot use whitespace in the middle of the number!
 (newline)
 
-; - Procedures (Primatives)
+; - Characters
+"Characters"
+#\a  ; the letter 'a'
+#\A  ; the letter 'A'
+(newline)
+
+; - Strings
+"Strings"
+"stringy"
+"this is a string"
+(newline)
+
+; - Symbols
+"Symbols"
+; Symbols are objects that we can use to see if two symbols are spelled the same.
+; Symbols are unique/static.
+(symbol? 'Hello)   ; outputs: #t  ; because it is a literal string
+(symbol? "Hello")  ; outputs: #f  ; because it is a String object
+(symbol? '1)       ; outputs: #f  ; because Scheme treats it as an integer
+(symbol? '1abc)    ; outputs: #t  ; because Scheme treats it as a literal string
+(newline)
+
+; - Pairs
+"Pairs"
+; The 'cons' or 'quote' procedures can create a pair.
+; (cons obj1 obj2)  ; must pass exactly two objects
+; NOTE: 'cons' can also create lists (more on cons in section "LISTS & PAIRS").
+(cons 0 1)
+(cons '0 '1)
+(quote (a . b))
+'(0 . 1)
+(newline)
+
+; - Lists
+"Lists"
+; The 'list' procedure will create a list
+(list 1 2 3)
+(list 'a 'b 'c)
+'(a b c)
+(quote (a b c))
+(newline)
+
+; - Vectors
+; TODO
+
+; - Procedures
+"Procedures"
 +  ; Plus (addition)
 -  ; Minus (subtraction)
 *  ; Asterisk/Star (multiplication)
 ; Etc.
 (newline)
 
-; - Booleans
-#t  ; true
-#f  ; false
-(newline)
 
-; - Characters
-#\a  ; the letter 'a'
-#\A  ; the letter 'A'
-(newline)
-
-; - Strings
-"stringy"
-"this is a string"
-(newline)
-
+;; EXPRESSIONS
+"EXPRESSIONS"
 ; - Literals
 ; Literal expressions in Scheme are "external representations" of objects, or
 ; forms, using the "literal" characters that "define" them. For example, the
@@ -112,33 +168,6 @@
 (quote (+ 1 2))  ; outputs: (+ 1 2)
 ''a              ; outputs: (quote a)
 '(quote a)       ; outputs: (quote a)
-(newline)
-
-; - Symbols
-; Symbols are objects that we can use to see if two symbols are spelled the same.
-; Symbols are unique/static.
-(symbol? 'Hello)   ; outputs: #t  ; because it is a literal string
-(symbol? "Hello")  ; outputs: #f  ; because it is a String object
-(symbol? '1)       ; outputs: #f  ; because Scheme treats it as an integer
-(symbol? '1abc)    ; outputs: #t  ; because Scheme treats it as a literal string
-(newline)
-
-; - Pairs
-; The 'cons' or 'quote' procedures can create a pair.
-; (cons obj1 obj2)  ; must pass exactly two objects
-; NOTE: 'cons' can also create lists (more on cons in section "LISTS & PAIRS").
-(cons 0 1)
-(cons '0 '1)
-(quote (a . b))
-'(0 . 1)
-(newline)
-
-; - Lists
-; The 'list' procedure will create a list
-(list 1 2 3)
-(list 'a 'b 'c)
-'(a b c)
-(quote (a b c))
 (newline)
 
 
@@ -209,6 +238,10 @@ myNum
 
 ;; PREDICATES
 "PREDICATES"
+; Predicates are special Scheme procedures that always return a boolean (#t or #f).
+; By convention, the identifier ends in a '?'. Here are some of the basic ones that
+; come with the language:
+
 ; - Types of Numbers
 (number? 4)
 (real? 3.21)
@@ -293,10 +326,6 @@ myNum
 (and #t #f)  ; Does use short-circuit evaluation
 (or #t #f)
 (newline)
-
-
-;; SYMBOLS, CHARACTERS, & STRINGS
-; TODO
 
 
 ;; CONDITIONALS
