@@ -83,6 +83,15 @@ public class Practice {
         // else
         //     System.out.println(n + " is not positive");
     }
+    
+    // public static void miscMath(int num1, int num2) {
+    //     if (num1 % 2 == 0 && num2 % 2 == 0)
+    //         System.out.println(num1 + num2);
+    //     else if ((num1 > 10 && num2 <= 10) || (num1 <= 10 && num2 > 10))
+    //         System.out.println(num1 * num2);
+    //     else
+    //         System.out.println(Math.pow(num1, num2));
+    // }
 }
 
 

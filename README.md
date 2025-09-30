@@ -28,6 +28,8 @@ Here is a commented example of a [makefile](https://github.com/Knights879/Tutori
 
 As a programmer, you should be comfortable with typing symbols (as they are used so often) and "navigation" keys (`HOME`, `END`, `INS`, `DEL`, `PG UP`, `PG DN`, and the `arrow keys`). Know the behavior of these "navigation" keys and use them to your advantage.
 
+This tip might seem counter-intuitive but one of the best things you can do when struggling with a problem is to walk away for a bit (this is why it's important to not be doing your assignments/work at the last minute because then you can't afford to do this). When you spend hours working on a problem, you are likely to get stuck in a particular mindset that may make it harder to solve the problem. So if you find yourself struggling, walking away for a couple hours, or more, can allow your brain to "reset". When you come back, you'll be able to look at the problem from a fresh perspective, which can be very helpful in problem-solving.
+
 ### Keyboard Shortcuts
 
 | EXTREMELY USEFUL TIP: |
