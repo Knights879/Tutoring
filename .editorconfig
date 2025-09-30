@@ -12,18 +12,30 @@ root = true
 end_of_line = crlf
 # Insert a newline at the end of the file
 insert_final_newline = true
+# Trim trailing whitespace at the end of lines
+trim_trailing_whitespace = true
 
-# For every C file and H file
+# For every Java and Python file
+[*.{java, py}]
+# 4 width tab indentation
+indent_style = tab
+indent_size = 4
+
+# For every C and H file
 [*.{c, h}]
 # Set default charset
 charset = utf-8
 # 3 space indentation
 indent_style = space
 indent_size = 3
-# Trim trailing whitespace
-trim_trailing_whitespace = true
+
+# For every JS, TS, and JSX file
+[*.{js, ts, jsx}]
+# 3 space indentation
+indent_style = space
+indent_size = 3
 
 # For the makefile
 [makefile]
-# Tab indent
+# Tab indentation
 indent_style = tab
