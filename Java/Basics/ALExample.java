@@ -73,7 +73,7 @@ public class ALExample {
 
     // Reverses the elements in the arraylist
     public void reverse() {
-        // TODO: Implement
+        // PRACTICE: Implement
     }
 
     /* Accessor Methods */

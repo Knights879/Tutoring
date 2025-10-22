@@ -17,8 +17,8 @@ trim_trailing_whitespace = true
 
 # For every Java and Python file
 [*.{java, py}]
-# 4 width tab indentation
-indent_style = tab
+# 4 width space indentation
+indent_style = space
 indent_size = 4
 
 # For every C and H file
