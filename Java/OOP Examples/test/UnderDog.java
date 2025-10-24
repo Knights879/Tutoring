@@ -9,4 +9,7 @@ public class UnderDog extends Dog {
         super.eat();
         System.out.print("bark ");
     }
+    public void under() {
+        System.out.print("test");
+    }
 }
