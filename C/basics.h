@@ -4,3 +4,9 @@
 
 // Use a header file for managing a includes (called imports in other languages),
 // things like `typedefs`, constants, and global variables, and functional prototypes.
+
+
+/* FUNCTIONAL PROTOTYPES */
+
+// Prints "Hello, World!"
+void hello_world(void);
