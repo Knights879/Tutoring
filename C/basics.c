@@ -30,7 +30,7 @@
 // Function that prints out "Hello, World!"
 void hello_world()
 {
-   printf("Hello, World!");
+   printf("Hello, World!\n");
 }
 
 // Each C program starts with, and ends with the `main` function.
@@ -130,44 +130,74 @@ int main(int argc, char **argv)
 
    // Loops
    // `for`
+   printf("for loop:\ni =");
    for (int i = 0; i < 5; i++)
    {
-      printf("i = %d\n", i);
+      printf(" %d", i);
    }
+   printf("\n");
    // In older versions of C (before C99), the above style wasn't supported. You
    // had to declare the looping variable before the loop, like so:
-   int i = 0;
-   for (i = 0; i < 5; i++)
-      printf("i = %d\n", i);
+   // int i = 0;
+   // for (i = 0; i < 5; i++)
+   //    printf("i = %d\n", i);
 
    // `while`
    int j = 0;
+   printf("while loop:\nj =");
    while (j < 5)
    {
-      printf("j = %d\n", j);
+      printf(" %d", j);
       j++;
    }
+   printf("\n");
 
    // `do` ... `while`
+   printf("do while loop:\nj =");
    do {
-      printf("j = %d\n", j);
+      printf(" %d", j);
       j--;
    } while (j > 0);
+   printf("\n");
    // NOTE: The `j` used above is the same one from the while loop above.
 
 
    /* FUNCTIONS */
-   // Function prototype: return_type name(parameters)
+   // Function prototype: return_type function_name(parameters)
    hello_world();
 
 
    /* INPUT/OUTPUT */
-   // TODO: Expand on the different I/O functions
-   // printf - output to console
-   // scanf  - input from console
+   // - OUTPUT
+   // `printf`  - formatted data to stdin (the console)
+   //
+   // `fprintf` - formatted data to a file
+   //
+   // `sprintf` - formatted data to a string
+   //
+   // KNOW THIS PAGE: https://cplusplus.com/reference/cstdio/printf/
+   // Understand the "format specifier" it uses (`specifier`, `flags`, `width`,
+   // `.precision`, and `length` tables). They are pretty much the same for each
+   // of the "print" functions.
+
+   // - INPUT
+   // `scanf`   - formatted data from stdin (the console)
+   //
+   // `fgets`   - string from a stream
+   //
+   // `getchar` - character from stdin (the console)
+   //
+   // If you want to use `scanf`, KNOW THIS PAGE:
+   //    https://cplusplus.com/reference/cstdio/scanf/
+   // Same as with the `printf` page, but the "format specifier" IS different,
+   // so know those differences.
+
+   // Ask the user to type a number, then store that number in a variable, and
+   // then print the number they entered.
    int num = 0;
    printf("Enter a number: ");
    scanf("%d", &num);
+   printf("You entered: %d\n", num);
 
 
    /* ARRAYS & STRINGS */
@@ -178,9 +208,48 @@ int main(int argc, char **argv)
 
 
    /* POINTERS */
+   // TODO: Give a summary
+
+   // - Simple pointer example
    int val = 10;
    int *ptr = &val;
    printf("Value: %d, Pointer: %p, Dereferenced: %d\n", val, (void*)ptr, *ptr);
+
+   // - String example
+   // Create the hello world string
+   char helloStr[] = "Hello, world!";
+
+   // Create the pointer, allocate the space in memory, and then assign the pointer
+   // to that location in memory.
+   // NOTE: We allocate 14 chars because the string is 13 chars + 1 for the
+   //       null terminator ('\0').
+   // NOTE: `malloc` returns a `void *` so we should type cast it to what we want.
+   char *retStr = (char *)malloc(sizeof(char) * 14);
+
+   // You should always check to make sure `malloc` worked.
+   if (retStr == NULL)
+   {
+      printf("Failure in `malloc`.\n");
+      // No need to free since malloc didn't actually work.
+      exit(EXIT_FAILURE);
+   }
+
+   // NOTE: `strlen` return type is `size_t` but we want an `int` because that
+   //       is the return type of `sprintf`, so we type cast to match it.
+   if (sprintf(retStr, "%s", helloStr) != (int)strlen(helloStr))
+   {
+      printf("Failure in `sprintf`.\n");
+
+      // ALWAYS FREE DYNAMICALLY ALLOCATED MEMORY
+      free(retStr);
+
+      exit(EXIT_FAILURE);
+   }
+
+   printf("This was found in memory:\n%s\n", retStr);
+
+   // ALWAYS FREE DYNAMICALLY ALLOCATED MEMORY
+   free(retStr);
 
 
    /* STRUCTS */
