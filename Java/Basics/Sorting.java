@@ -27,21 +27,21 @@ public class Sorting {
         // printArray(myArray);
         // System.out.println();
 
-        System.out.println("-----Merge Sort-----");
-        System.err.print("Unsorted array: ");
-        printArray(myArray);
-        mergeSort(myArray, 0, myArray.length - 1);
-        System.err.print("Sorted array: ");
-        printArray(myArray);
-        System.out.println();
-
-        // System.out.println("-----QuickSort-----");
+        // System.out.println("-----Merge Sort-----");
         // System.err.print("Unsorted array: ");
         // printArray(myArray);
-        // quickSort(myArray);
+        // mergeSort(myArray, 0, myArray.length - 1);
         // System.err.print("Sorted array: ");
         // printArray(myArray);
         // System.out.println();
+
+        System.out.println("-----QuickSort-----");
+        System.err.print("Unsorted array: ");
+        printArray(myArray);
+        quickSort(myArray);
+        System.err.print("Sorted array: ");
+        printArray(myArray);
+        System.out.println();
     }
 
     /* MUTATOR METHODS */
@@ -68,18 +68,18 @@ public class Sorting {
             // 1. Find the minimum available element
             // Set the current element to the min
             int minIndex = i;
-            // Loop through the rest of the unsorted subarray and compare each element to 'min'.
+            // 2. Loop through the rest of the unsorted subarray and compare each element to 'min'.
             // If the current element is less than 'min', make it the new 'min'
             for (int j = i + 1; j < len; j++)
                 if (arr[j] < arr[minIndex])
                     minIndex = j;
 
-            // 2. Swap the current element with the minimum element
+            // 3. Swap the current element with the minimum element
             int temp = arr[i];
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;
 
-            // 3. NOT THE ALGORITHM -- OPTIONAL -- Print the array after the current pass.
+            // NOT APART OF THE ALGORITHM - OPTIONAL - Print the array after the current pass.
             System.out.println("On " + i + " pass: " + "Swap index = " + i + ", Min index = " + minIndex);
             System.out.print("After " + i + " pass: ");
             printArray(arr);
@@ -120,7 +120,7 @@ public class Sorting {
             // end of the sorted section.
             arr[j + 1] = currentValue;
 
-            // 4. NOT THE ALGORITHM -- OPTIONAL -- Print the array after the current pass.
+            // NOT APART OF THE ALGORITHM - OPTIONAL - Print the array after the current pass.
             System.out.print("After " + i + " pass: ");
             printArray(arr);
         }
@@ -160,23 +160,23 @@ public class Sorting {
         int len1 = m - l + 1;
         int len2 = r - m;
 
-        // 1. Create temp arrays for sorting later.
+        // 1a. Create temp arrays for sorting later.
         int[] left = new int[len1];
         int[] right = new int[len2];
-        // Use the temp arrays to make a copy
+        // 1b. Use the temp arrays to make a copy
         for (int i = 0; i < len1; i++)
             left[i] = arr[l + i];
         for (int j = 0; j < len2; j++)
             right[j] = arr[m + 1 + j];
 
-        // 2. Merge the two halves together
+        // 2a. Merge the two halves together
         int i = 0;  // index for the left subarray
         int j = 0;  // index for the right subarray
         int k = l;  // index for the merged subarray
 
-        // Keep looping until one of the subarrays are empty. On each pass, choose the smaller
-        // element of the left and right subarrays, place it in the merged array, then
-        // move the subarray that was picked to the next element.
+        // 2b. Keep looping until one of the subarrays are empty. On each pass, choose the
+        // smaller element of the left and right subarrays, place it in the merged array,
+        // then move the subarray that was picked to the next element.
         while (i < len1 && j < len2) {
             if (left[i] <= right[j])
                 arr[k] = left[i++];
@@ -185,25 +185,91 @@ public class Sorting {
             k++;
         }
 
-        // Copy any remaining elements from the left subarray
+        // 2c. Copy any remaining elements from the left subarray
         while (i < len1)
             arr[k++] = left[i++];
-        // Copy any remaining elements from the right subarray
+        // 2d. Copy any remaining elements from the right subarray
         while (j < len2)
             arr[k++] = right[j++];
 
-        // NOT THE ALGORITHM -- OPTIONAL -- Print the array after the current pass.
+        // NOT APART OF THE ALGORITHM - OPTIONAL - Print the array after the current pass.
         System.out.print("After pass: ");
         printArray(arr);
     }
 
     /**
-     * Sorts the given array, 'arr', using QuickSort
-     * @param arr the array to be sorted
+    * Sorts the given array, 'arr', using QuickSort
+    * QuickSort: Sorts the array using a divide-and-conquer approach (and recursion).
+    * Select a pivot element (in this implementation, the last element). Partition the
+    * array so that all elements less than or equal to the pivot are on the left, and all
+    * elements greater are on the right. Recursively apply this process to the subarrays
+    * to the left and right of the pivot until the entire array is sorted.
+    * NOTE: This method isn't really needed. You could just use the `quickSort(int[], int, int)`
+    *       version of this (overloaded) method (just like the merge sort implementation above).
+    * @param arr the array to be sorted
      */
     public static void quickSort(int[] arr) {
-        // TODO: Implement
-        throw new UnsupportedOperationException("Not yet implemented.");
+        // Calls the recursive helper with the full array bounds.
+        quickSort(arr, 0, arr.length - 1);
+    }
+
+    /**
+     * Helper function for quickSort()
+     * Recursively sorts arr[low...high] using partition()
+     * @param arr the array to be sorted
+     * @param low the starting index
+     * @param high the ending index
+     */
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            // 1. Partition the array and get the pivot index
+            int pi = partition(arr, low, high);
+
+            // 2. Recursively sort elements before and after partition
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    /**
+     * Helper function for quickSort()
+     * Partitions arr[low...high] around a pivot element
+     * Elements less than or equal to the pivot are moved to the left,
+     * elements greater are moved to the right.
+     * @param arr the array to be partitioned
+     * @param low the starting index
+     * @param high the ending index
+     * @return the index of the pivot after partition
+     */
+    public static int partition(int[] arr, int low, int high) {
+        // 1. Choose a pivot (we will choose the last element)
+        int pivot = arr[high];
+        // 2. Keep track of the index of the smaller element
+        int i = low - 1;
+
+        // 3. Partition the (sub)array. Move all the elements that are less than or
+        //    equal to the pivot to the left side.
+        for (int j = low; j < high; j++) {
+            if (arr[j] <= pivot) {
+                // Increment the index of the smaller element
+                i++;
+                // Swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        // 4. Swap arr[i+1] and arr[high] (arr[high] is the pivot element)
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+
+        // NOT APART OF THE ALGORITHM - OPTIONAL - Print the array after the current partition.
+        System.out.print("After partition at index " + high + " with element " + pivot + ": ");
+        printArray(arr);
+
+        return i + 1;
     }
 
     /* ACCESSOR METHODS */
