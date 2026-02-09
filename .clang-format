@@ -1,0 +1,52 @@
+BasedOnStyle: LLVM
+UseTab: Never
+IndentWidth: 3
+TabWidth: 3
+ContinuationIndentWidth: 3
+# AlignAfterOpenBracket: true
+# BracedInitializerIndentWidth: 3
+ColumnLimit: 100
+SeparateDefinitionBlocks: Always
+DerivePointerAlignment: false
+PointerAlignment: Right
+ReferenceAlignment: Right
+AlignArrayOfStructures: Right
+EmptyLineBeforeAccessModifier: Always
+# SortIncludes: true
+# SortIncludes:
+#    Enabled: true
+#    IgnoreCase: true
+#    IgnoreExtension: true
+IncludeBlocks: Regroup
+IncludeCategories:
+   # 1. C++ standard library: <[a-z0-9_]+>
+   - Regex:           '^<[a-z0-9_]+>$'
+     Priority:        1
+     SortPriority:    0
+   # 2. .h or .hpp files with no path: <foo.h> or <bar.hpp>
+   - Regex:           '^<[^/\\]+\.hp?p?>$'
+     Priority:        2
+     SortPriority:    1
+   # 3. .h or .hpp files with a path: <dir/foo.h> or <dir\bar.hpp>
+   - Regex:           '^<.*[\\/].*\.hp?p?>$'
+     Priority:        3
+     SortPriority:    2
+   # 4. Any include with quotes: "anything"
+   - Regex:           '^".*"'
+     Priority:        4
+     SortPriority:    3
+# AccessModifierOffset: -1
+# BreakBeforeBraces: Linux
+BreakBeforeBraces: Custom
+BraceWrapping:
+   AfterClass:      true
+   AfterFunction:   true
+   AfterEnum:       false
+   AfterStruct:     false
+   AfterUnion:      false
+   AfterNamespace:  false
+   AfterControlStatement: false
+   AfterObjCDeclaration: false
+   BeforeCatch:     false
+   BeforeElse:      false
+   IndentBraces:    false
