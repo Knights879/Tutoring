@@ -5,6 +5,7 @@ TabWidth: 3
 ContinuationIndentWidth: 3
 # AlignAfterOpenBracket: true
 # BracedInitializerIndentWidth: 3
+NamespaceIndentation: All
 ColumnLimit: 100
 SeparateDefinitionBlocks: Always
 DerivePointerAlignment: false
@@ -39,14 +40,14 @@ IncludeCategories:
 # BreakBeforeBraces: Linux
 BreakBeforeBraces: Custom
 BraceWrapping:
+   AfterNamespace:  true
    AfterClass:      true
    AfterFunction:   true
    AfterEnum:       false
    AfterStruct:     false
    AfterUnion:      false
-   AfterNamespace:  false
    AfterControlStatement: false
    AfterObjCDeclaration: false
    BeforeCatch:     false
-   BeforeElse:      false
+   BeforeElse:      true
    IndentBraces:    false
