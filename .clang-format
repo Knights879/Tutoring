@@ -13,6 +13,7 @@ PointerAlignment: Right
 ReferenceAlignment: Right
 AlignArrayOfStructures: Right
 EmptyLineBeforeAccessModifier: Always
+SpacesBeforeTrailingComments: 2
 # SortIncludes: true
 # SortIncludes:
 #    Enabled: true
