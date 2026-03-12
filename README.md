@@ -22,13 +22,19 @@ Here is a commented example of an [.editorconfig](https://github.com/Knights879/
 
 Here is a commented example of a [makefile](https://github.com/Knights879/Tutoring/blob/main/makefile) that is used with the `make` command to make build automation for C/C++ programs easier.
 
+If you want to learn about Markdown files, check out [Markdown Guide](https://www.markdownguide.org).
+
 ## Tips
 
 ### General
 
-As a programmer, you should be comfortable with typing symbols (as they are used so often) and "navigation" keys (`HOME`, `END`, `INS`, `DEL`, `PG UP`, `PG DN`, and the `arrow keys`). Know the behavior of these "navigation" keys and use them to your advantage.
+<!-- markdownlint-disable MD033 -->
+- <a id="nav-keys-tip"></a>As a programmer, you should be comfortable with typing symbols (as they are used so often) and "navigation" keys (`HOME`, `END`, `INS`, `DEL`, `PG UP`, `PG DN`, and the `arrow keys`). Know the behavior of these "navigation" keys and use them to your advantage.
+<!-- markdownlint-enable MD033 -->
 
-This tip might seem counter-intuitive but one of the best things you can do when struggling with a problem is to walk away for a bit (this is why it's important to not be doing your assignments/work at the last minute because then you can't afford to do this). When you spend hours working on a problem, you are likely to get stuck in a particular mindset that may make it harder to solve the problem. So if you find yourself struggling, walking away for a couple hours, or more, can allow your brain to "reset". When you come back, you'll be able to look at the problem from a fresh perspective, which can be very helpful in problem-solving.
+- This tip might seem counter-intuitive but one of the best things you can do when struggling with a problem is to walk away for a bit (this is why it's important to not be doing your assignments/work at the last minute because then you can't afford to do this). When you spend hours working on a problem, you are likely to get stuck in a particular mindset that may make it harder to solve the problem. So if you find yourself struggling, walking away for a couple hours, or more, can allow your brain to "reset". When you come back, you'll be able to look at the problem from a fresh perspective, which can be very helpful in problem-solving.
+
+- When learning something new, whether a [language](#learning-a-new-language) or some software, don't take shortcuts. Learning is not the time for shortcuts, it's supposed to be the time when you **put in the extra work to really build up a solid foundation**. If you take shortcuts when learning something new, it'll catch up with you eventually.
 
 ### Keyboard Shortcuts
 
@@ -38,7 +44,7 @@ This tip might seem counter-intuitive but one of the best things you can do when
 
 [Here is a great list of common keyboard shortcuts.](https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts)
 
-> `CTRL/ALT` in combination with "navigation" keys changes the behavior of them to make them more "powerful." `SHIFT` in combination with "navigation" keys allows you to select text. These two combinations can be combined to allow for fast and precise select of chunks of text.
+> `CTRL` and/or `ALT` in combination with "navigation" keys changes the behavior of them to make them more "powerful." `SHIFT` in combination with "navigation" keys allows you to select text. These two combinations can be combined to allow for fast and precise select of chunks of text.
 
 There are a lot of keyboard shortcuts that can save you time and make you **far** more productive. Whatever editor/IDE you use to program should have a list of shortcuts that are available to you, and almost all of them allow you to modify or add your own shortcuts.
 
@@ -180,11 +186,11 @@ Each style is valid, so choose the style that works for you. But once you make a
 
 ### Hardware
 
-I use a standard, QWERTY keyboard and a mouse with side buttons.
+I use a standard, QWERTY keyboard and a mouse with side buttons. I recommend getting a good keyboard that you like to type on. I would recommend at least a 75% so you have all of the "navigation" keys (see [Navigation Keys Tip](#nav-keys-tip) and [Keyboard Shortcuts](#keyboard-shortcuts) for reasoning).
 
 ### Operating System
 
-I use Windows (currently Windows 11). I have experience with MacOS, but do not use it regularly.
+I use Windows (currently Windows 11). I have experience with MacOS, but do not use it regularly. I also have Linux (Ubuntu) terminal experience.
 
 ### Software
 
@@ -214,4 +220,4 @@ For JavaScript:
 
 | NOTE: |
 | :--- |
-| While these add functionality for the languages in VSCode, they do **not** add the languages themselves. You will need to do that yourself by downloading the languages onto your machine and make sure VSCode knows where they are located. |
+| While these add functionality for the languages in VSCode, they do **not** add the languages themselves. You will need to do that yourself by downloading "the languages" (a compiler and/or whatever you need to run programs of that language) onto your machine and make sure VSCode knows where they are located. |
