@@ -57,20 +57,18 @@ public class Sorting {
      * @param arr the array to be sorted
      */
     public static void selectionSort(int[] arr) {
-        int len = arr.length;  // So that we aren't calculating it every time we loop!!!
-
         // Move the boundary between the sorted and unsorted subarrays to the right with each pass.
         // The boundary is just before the current index. Start with 'index = 0' so that the entire
         // array starts out in the unsorted section. End with 'index = len - 2' because after this
         // pass, there will be one element left in the unsorted section, but it is the last element
         // left and therefore is already sorted (nothing left to compare it with).
-        for (int i = 0; i < len - 1; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             // 1. Find the minimum available element
             // Set the current element to the min
             int minIndex = i;
             // 2. Loop through the rest of the unsorted subarray and compare each element to 'min'.
             // If the current element is less than 'min', make it the new 'min'
-            for (int j = i + 1; j < len; j++)
+            for (int j = i + 1; j < arr.length; j++)
                 if (arr[j] < arr[minIndex])
                     minIndex = j;
 
@@ -97,13 +95,11 @@ public class Sorting {
      * @param arr the array to be sorted
      */
     public static void insertionSort(int[] arr) {
-        int len = arr.length;
-
         // Move the boundary between the sorted and unsorted subarrays to the right with each pass.
         // The boundary is just before the current index. Start with 'index = 1' so that the first
         // element is already in the sorted section. End with 'index = len - 1' because this
         // represents the last element to be sorted.
-        for (int i = 1; i < len; i++) {
+        for (int i = 1; i < arr.length; i++) {
             // 1. Create the second index to the left of the current index and save the value
             // of the current element.
             int j = i - 1;
